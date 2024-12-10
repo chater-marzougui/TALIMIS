@@ -1,17 +1,18 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import SubscribeNow from '../components/SubscribeNow'
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import SubscribeNow from "../components/SubscribeNow";
+import TeacherToolsDashboard from "./TeacherToolsDashboard";
 
 const Tools = () => {
   return (
     <>
-        <Navbar></Navbar>
-        <SubscribeNow></SubscribeNow>
-        <Footer></Footer>
-
+      {/* <Navbar></Navbar> */}
+      <TeacherToolsDashboard />
+      <SubscribeNow></SubscribeNow>
+      <Footer></Footer>
     </>
-  )
-}
+  );
+};
 
-export default Tools
+export default Tools;
