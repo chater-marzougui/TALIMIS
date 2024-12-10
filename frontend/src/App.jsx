@@ -12,7 +12,7 @@ import Contact from "./pages/Contact"
 import Student from "./pages/Student";
 import Tools from "./pages/Tools";
 
-import { Network } from "./pages/Network";
+import Network from "./pages/Network";
 import RoboticsPage from "./pages/robotics";
 
 export default function App() {

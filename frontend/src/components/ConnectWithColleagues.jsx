@@ -6,8 +6,11 @@ import teacher4 from '../assets/images/teacher4.png';
 import call1 from '../assets/icons/call1.png'
 import call2 from '../assets/icons/call2.png'
 import call3 from '../assets/icons/call3.png'
+import { Link } from 'react-router-dom';
 
 const ConnectWithColleagues = () => {
+  const userId = localStorage.getItem('userId');
+  
   return (
     <section className="py-16 px-6 bg-[#f5effb] flex flex-col items-center">
       {/* Title */}
@@ -88,9 +91,11 @@ const ConnectWithColleagues = () => {
             </p>
           </div>
           {/* Explore Button */}
+          <Link to={`/network/${userId}`}>
           <button className="self-start px-6 py-3 bg-transparent text-teal-500 border border-teal-500 rounded-full shadow-md hover:bg-teal-500 hover:text-white transition duration-300">
             explorer
           </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import courseimg from '../assets/images/course.png'; // Update this import path
+import courseimg from '../assets/images/course.png'; 
+import roboticsImage from '../assets/images/robotics.jpg';
 
 const Courses = () => {
   const courses = [
@@ -9,6 +10,7 @@ const Courses = () => {
       title: "Robotics From Scratch",
       description: "Master robotics through hands-on learning and interactive content. Complete each phase to progress your skills from beginner to intermediate level.",
       link: "/robotics",
+      Image: roboticsImage,
     },
     {
       title: "AI 101 pour enseignants",
@@ -90,7 +92,7 @@ const Courses = () => {
               variants={itemVariants} // Apply animation to each item
             >
               <img
-                src={courseimg}
+                src={course.Image || courseimg}
                 alt={course.title}
                 className="w-full h-40 object-cover"
               />

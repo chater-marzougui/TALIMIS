@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
 
-export const Network = () => {
+ const Network = () => {
   const [userName, setUserName] = useState(null);
   const [users, setUsers] = useState([]);
   const [nameToSearch, setNameToSearch] = useState('');
@@ -215,53 +215,55 @@ export const Network = () => {
         </div>
 
         {/* Conversation Section */}
-        <div className="w-[55%] rounded-lg bg-white min-h-screen p-4 flex flex-col">
-          <h3 className="text-lg font-bold">Conversation</h3>
-          <div className="flex-1 overflow-y-auto">
-            {selectedConversation ? (
-              <ul>
-                {selectedConversation.messages.map((message, index) => (
-                  <li
-                    key={index}
-                    className={`p-2 border-b ${
-                      message.senderId === localStorage.getItem('userId')
-                        ? 'text-right bg-blue-100'
-                        : 'text-left bg-gray-100'
-                    }`}
-                  >
-                    <strong>
-                      {message.senderId === localStorage.getItem('userId')
-                        ? 'You'
-                        : nameTexting}
-                    </strong>
-                    : {message.content}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-gray-500">
-                Select a user to view the conversation.
-              </p>
-            )}
-          </div>
-          {selectedConversation && (
-            <div className="mt-4 flex items-center">
-              <input
-                type="text"
-                value={newMessage}
-                onChange={(e) => setNewMessage(e.target.value)}
-                placeholder="Type your message here..."
-                className="flex-1 p-2 border border-gray-300 rounded-l-lg"
-              />
-              <button
-                onClick={sendMessage}
-                className="bg-purple-800 text-white p-2 rounded-r-lg"
-              >
-                Send
-              </button>
-            </div>
-          )}
-        </div>
+{/* Conversation Section */}
+<div className="w-[55%] rounded-lg bg-white min-h-screen p-4 flex flex-col">
+  <h3 className="text-lg font-bold mb-3">Conversation</h3>
+  <div className="flex-1 overflow-y-auto">
+    {selectedConversation ? (
+      <ul className="flex flex-col gap-2">
+        {selectedConversation.messages.map((message, index) => (
+          <li
+            key={index}
+            className={`max-w-[75%] p-3 rounded-lg shadow-md ${
+              message.senderId === localStorage.getItem('userId')
+                ? 'self-end bg-purple-500 text-white'
+                : 'self-start bg-gray-300 text-gray-800'
+            }`}
+          >
+<p
+  className={`text-sm p-1 font-bold ${
+    message.senderId === localStorage.getItem('userId') ? 'text-purple-900' : 'text-gray-700'
+  }`}
+>
+  {message.senderId === localStorage.getItem('userId') ? 'You' : nameTexting}
+</p>
+
+            <p className='p-1'>{message.content}</p>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p className="text-gray-500">Select a user to view the conversation.</p>
+    )}
+  </div>
+  {selectedConversation && (
+    <div className="mt-4 flex items-center">
+      <input
+        type="text"
+        value={newMessage}
+        onChange={(e) => setNewMessage(e.target.value)}
+        placeholder="Type your message here..."
+        className="flex-1 p-2 border border-gray-300 rounded-l-lg"
+      />
+      <button
+        onClick={sendMessage}
+        className="bg-purple-800 text-white p-2 rounded-r-lg"
+      >
+        Send
+      </button>
+    </div>
+  )}
+</div>
 
         {/* Random Users Section */}
         <div className="w-80 border border-gray-300 rounded-xl bg-white">
@@ -296,3 +298,6 @@ export const Network = () => {
     </>
   );
 };
+
+
+export default Network
