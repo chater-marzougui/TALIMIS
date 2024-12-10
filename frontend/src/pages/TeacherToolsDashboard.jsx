@@ -113,17 +113,12 @@ const GradingDashboard = () => (
   </div>
 );
 
-const TranslationTool = () => (
-  <div className="bg-white shadow-md rounded-lg p-6">
-    <h2 className="text-2xl font-semibold mb-6 text-purple-800">
-      Outil de Traduction
-    </h2>
-    <p className="text-purple-700">
-      Les fonctionnalités de traduction similaires à Google Translate arrivent
-      bientôt.
-    </p>
-  </div>
-);
+const TranslationTool = () => {
+  return <iframe src="https://www.bing.com/translator" style={{ 
+    width:"100%",
+    height:"100vh"
+   }}></iframe>;
+};
 
 const LearningAnalytics = () => (
   <div className="bg-white shadow-md rounded-lg p-6">
