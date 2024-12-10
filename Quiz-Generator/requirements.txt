@@ -1,0 +1,12 @@
+sentence-transformers
+faiss-cpu
+streamlit
+chardet
+aiohttp
+asyncio
+pandas
+langchain
+langchain-community
+bs4
+PyPDF2
+ragas
