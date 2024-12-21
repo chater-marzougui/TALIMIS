@@ -1,4 +1,3 @@
-import React from "react";
 import ChatSearch from "../components/ChatSearch";
 import CourseContent from "../components/CourseContent";
 import Footer from "../components/Footer";
